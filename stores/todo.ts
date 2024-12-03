@@ -13,5 +13,13 @@ export const useTodoStore = defineStore('todoStore', {
       };
       this.Todo.push(newTodo);
     },
-  },
+ 
+  async removeNote(id: number){
+    const index = this.Todo.findIndex((todo) => todo.id === id);
+    if (index !== -1) {
+      this.Todo.splice(index, 1);
+    }
+  }
+ },
+
 });
